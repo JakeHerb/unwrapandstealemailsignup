@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { API } from 'aws-amplify'
 
 export default class InputTransformComponent extends Component {
     constructor(props) {
@@ -29,30 +28,21 @@ export default class InputTransformComponent extends Component {
             })
             console.log(email);
 
-            // LAMBDA API ENDPOINT
-            const endpoint = "<https://psapqdr502.execute-api.us-west-2.amazonaws.com/default/sendContactEmail>";
-            
-            // Message to be sent as JSON
-            const body = JSON.stringify({
-                newEmail: email
-            });
-
-            const requestOptions = {
+            fetch("https://psapqdr502.execute-api.us-west-2.amazonaws.com/default/sendEmail", {
+                mode: "no-cors",
                 method: "POST",
-                body
-            }
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    senderName: "New Signup",
+                    senderEmail: "unwrappingthefuture@gmail.com",
+                    message: email,
+                    date: new Date()
+                })
+            })
 
-            fetch(endpoint, requestOptions)
-                .then((response) => {
-                    if (!response.ok) throw new Error("Error in fetch");
-                    return response.json;
-                })
-                .then((response) => {
-                    document.getElementById("result-text").innerText = "Email added to list.";
-                })
-                .catch((error) => {
-                    document.getElementById("result-text").innerText = "The open positions today have been filled. Try again tomorrow.";
-                })
           }
     }
     // React Life Cycle
