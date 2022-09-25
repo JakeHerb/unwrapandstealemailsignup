@@ -83,7 +83,7 @@ function App() {
 
   const areYouSureBody = (
     <div className="State-Sure">
-      <h3>THIS IS A REAL LIFE ART HEIST.<br />DO YOU WANT TO CONTINUE?</h3>
+      <h3>THERE ARE RISKS INVOLVED.<br />DO YOU WANT TO CONTINUE?</h3>
       <div
         className='EscapeSelection'
       >
@@ -125,7 +125,6 @@ function App() {
         return notSuretext;
       case 4:
         return emailEntry;
-      
       default:
         return;
     }
