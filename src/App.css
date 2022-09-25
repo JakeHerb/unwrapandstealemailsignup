@@ -1,10 +1,39 @@
 .App {
+  position: relative;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  color: rgb(0, 0, 0);
+  height: 100vh;
+  min-height: -webkit-fill-available;
+  aspect-ratio: 968 / 1635;
+}
+
+* {
+  font-family: 'Helvetica Neue LT W05 65 MEDIUM', Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+body{
+  margin: 0;
+  padding: 0;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.Logo img {
+  padding-top: 0px;
+  position: relative;
+  margin-top: 0vh;
+  margin-bottom: 0;
+  width: 100%;
+  overflow: hidden;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,25 +43,185 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  height: 58%;
+  /* border: solid red 1px; */
+}
+
+.App-header video{
+  width: min(90%, 45vh);
+  margin: -1px;
+}
+
+.dynamic-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  color: rgb(0, 0, 0);
+  height: 42%;
+  width: 100%;
+  padding-bottom: 5%;
+  bottom: 0;
+  /* border: solid green 1px; */
+}
+
+.State-Escape {
+  margin: 0;
+  padding: 0;
+}
+
+.State-Escape h3 {
+  font-size: 3.1vh;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 3%;
+}
+
+.EscapeSelection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 0;
+  padding: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.EscapeSelection p {
+  font-size: 7vh;
+  color: #ff00a8;
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.State-Sure {
+  margin: 0;
+  padding: 0;
+}
+
+.State-Sure  h3 {
+  font-size: 3vh;
+  margin-bottom: 1vh;
+}
+
+.State-EmailEntry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.State-EmailEntry p {
+  font-size: 3vh;
+  padding: 1vmin;
+}
+
+/* EMAIL CONTACT FORM */
+.email-container {
+  display: flex;
+  justify-content: center;
+}
+
+.email-container button {
+  text-align: center;
+  color: #ff00a8;
+  background-color: #ffffff;
+  height: 10vh;
+  margin-top: 4vh;
+  cursor: pointer;
+  background: none;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  font-size: min(50px, 6vmin);
+}
+
+
+.form-control {
+  text-align: center;
+  height:10vh;
+  margin-top: 4vh;
+  width: 100%;
+}
+
+input {
+  background: 0;
+  border: 0;
+  outline: none;
+  font-size: 4vh;
+  transition: padding 0.3s 0.2s ease;
+}
+input:focus {
+  padding-bottom: 5px;
+}
+input:focus + .line:after {
+  transform: scaleX(1);
+}
+.field {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: min(640px, 80vmin);
+}
+.field .line {
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  bottom: -8px;
+  background: #ffffff;
+}
+.field .line:after {
+  content: " ";
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 3px;
+  transform: scalex(0);
+  transition: transform 0.3s ease;
+  background: #a0a0a0;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #ff00a8;
+  opacity: 1.0; /* Firefox */
+}
+/* END EMAIL CONTACT FORM */
+
+.InputSpace {
+  height: min(50px) !important;
+  width: 400px;
+}
+
+.State-onsubmit p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1vh;
+  font-size: 3.1vh;
+  color: #ff00a8;
+}
+
+
+/* Specific handling for small screen sizes */
+@media only screen and (max-width: 600px) {
+  /* body {
+    background-color: lightblue;
+  } */
+
+  .App {
+    width: 100vw;
+    min-height: -webkit-fill-available;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App-header h1 {
+    font-size: 15vw;
+  }
+
+  .dynamic-content {
+    padding-bottom: 30%;
   }
 }
