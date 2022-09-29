@@ -1,5 +1,4 @@
 import logo from './media/images/unwrap_and_steal_logo.png';
-import icon from './media/images/icon.png';
 import './App.css';
 import React, { useEffect, useState } from 'react'
 import InputTransformComponent from './components/InputTransformComponent'
@@ -9,31 +8,30 @@ function App() {
 
 
   const video = (
-    <video autoPlay loop muted playsInline poster={icon} >
-      <source src='https://videosformattswebsite.s3.us-west-2.amazonaws.com/skullVideo_squxwsre.mp4' type="video/mp4"/>
+    <video autoPlay loop muted playsInline >
+      <source src='https://videosformattswebsite.s3.us-west-2.amazonaws.com/skullVideo_square.mp4' type="video/mp4"/>
     </video>
   )
 
   // DO YOU WANT TO ESCAPE
-  const yesEscape = <p
+  const yesEscape = <p 
     style={{
-
       color: "#ff00a8",
       cursor: "pointer",
       paddingRight: "2vw"}}
-    onClick={() =>
+    onClick={() => 
       {
         setStateIndex(2);
       }}
       >YES</p>
 
   const slash = <p> / </p>
-  const noEscape = <p
+  const noEscape = <p 
     style={{
       color: "#ff00a8",
       cursor: "pointer",
       paddingLeft: "2vw"}}
-    onClick={() =>
+    onClick={() => 
       {
         setStateIndex(1);
       }}
@@ -60,24 +58,24 @@ function App() {
 
 
   // ARE YOU SURE
-  const yesSure = <p
+  const yesSure = <p 
     style={{
       color: "#ff00a8",
       cursor: "pointer",
       paddingRight: "2vw"}}
-    onClick={() =>
+    onClick={() => 
       {
       console.log("THERE IS NO ESCAPE");
       setStateIndex(4);
       }}
     >YES</p>
 
-  const noSure = <p
+  const noSure = <p 
     style={{
       color: "#ff00a8",
       cursor: "pointer",
       paddingLeft: "2vw"}}
-    onClick={() =>
+    onClick={() => 
       {
         setStateIndex(3);
       }}
@@ -106,7 +104,7 @@ function App() {
   const emailEntry = (
     <div className="State-EmailEntry">
       <InputTransformComponent/>
-    </div>
+    </div> 
   )
 
     // Gets the code for the current state.
