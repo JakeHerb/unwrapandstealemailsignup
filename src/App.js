@@ -1,4 +1,5 @@
 import logo from './media/images/unwrap_and_steal_logo.png';
+import icon from './media/images/icon.png';
 import './App.css';
 import React, { useEffect, useState } from 'react'
 import InputTransformComponent from './components/InputTransformComponent'
